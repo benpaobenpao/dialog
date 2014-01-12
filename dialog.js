@@ -1,5 +1,5 @@
 /* https://github.com/benpaobenpao/dialog */
-(function($) {
+(function($) { 
     $.Dialog = {
         init: function(options) {
             var _this = this,

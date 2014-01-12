@@ -1,84 +1,84 @@
-*{margin:0px;padding: 0px;}
-        .clearfix{*zoom:1;}
-        .clearfix:after{content:"\0020";display:block;height:0;clear:both;overflow:hidden;visibility:hidden;}
-        .dialogbg{display:block; *zoom:1; position: absolute; left: 0px; top: 0px; height: 100%; width: 100%; opacity: 0.35;filter:alpha(opacity=30); background: #ccc;z-index: 9999;}
-        .dialogbox{
-            position: fixed;
-            _position: absolute;
-            -webkit-box-shadow: 0px 0px 6px #999;
-            border: 1px solid #ccc;
-            box-shadow: 0px 0px 3px #999;
-            border-radius: 6px; 
-            z-index: 99999;
-            left: 50%;
-            top: 50%;
-            background: #f5fffa;
-            overflow: hidden;
-        }
-        .dialogboxrunstart{
-            -webkit-transform: scale(0px,0px);
-            -webkit-transition:all 0.2s ease-in-out;
-            -moz-transform: scale(0px,0px);
-            -moz-transition:all 0.2s ease-in-out;
-            -ms-transform: scale(0px,0px);
-            -ms-transition:all 0.2s ease-in-out;
-            -o-transform: scale(0px,0px);
-            -o-transition:all 0.2s ease-in-out;
-            transform: scale(0px,0px);
-            transition:all 0.2s ease-in-out;
-        }
-        .dialogtit{
-            position: relative;
-            height: 30px; line-height: 30px; overflow: hidden;
-            padding: 0px 10px;
-            border-bottom: 1px solid #274863;
-            font-size: 16px;
-            background: #4682b4;
-        }
+*{margin:0px;padding: 0px;} 
+.clearfix{*zoom:1;}
+.clearfix:after{content:"\0020";display:block;height:0;clear:both;overflow:hidden;visibility:hidden;}
+.dialogbg{display:block; *zoom:1; position: absolute; left: 0px; top: 0px; height: 100%; width: 100%; opacity: 0.35;filter:alpha(opacity=30); background: #ccc;z-index: 9999;}
+.dialogbox{
+    position: fixed;
+    _position: absolute;
+    -webkit-box-shadow: 0px 0px 6px #999;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 3px #999;
+    border-radius: 6px; 
+    z-index: 99999;
+    left: 50%;
+    top: 50%;
+    background: #f5fffa;
+    overflow: hidden;
+}
+.dialogboxrunstart{
+    -webkit-transform: scale(0px,0px);
+    -webkit-transition:all 0.2s ease-in-out;
+    -moz-transform: scale(0px,0px);
+    -moz-transition:all 0.2s ease-in-out;
+    -ms-transform: scale(0px,0px);
+    -ms-transition:all 0.2s ease-in-out;
+    -o-transform: scale(0px,0px);
+    -o-transition:all 0.2s ease-in-out;
+    transform: scale(0px,0px);
+    transition:all 0.2s ease-in-out;
+}
+.dialogtit{
+    position: relative;
+    height: 30px; line-height: 30px; overflow: hidden;
+    padding: 0px 10px;
+    border-bottom: 1px solid #274863;
+    font-size: 16px;
+    background: #4682b4;
+}
 
-        .dialogclosed{
-            position: absolute;
-            right: 10px;
-            color: #fff;
-            font-weight: 700;
-            font-size: 20px;
-            cursor: pointer;
-        }
-        .dialogclosed:hover{
-            color: #f00;
-        }
+.dialogclosed{
+    position: absolute;
+    right: 10px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+}
+.dialogclosed:hover{
+    color: #f00;
+}
 
-        .dialogtxt{
-            color: #fff;
-            font-weight: 700;
-            margin-right: 20px;
-        }
-        .dialogmain{
-            padding: 10px 20px 10px 20px;
-        }
-        .dialogBtns{
-            text-align: center;
-            padding-top: 5px;
-        }
-        .dialogconform,.dialogcancel{
-            display: inline-block;
-            *display: inline;
-            *zoom:1;
-            padding: 0px 10px;
-            height: 24px;
-            line-height: 24px;
-            color: #fff;
-            font-size: 12px;
-            border-radius: 4px;
-            background: #005eac;
-            border-width: 1px;
-            border-style: solid;
-            border-color: #b8d4e8 #124680 #124680  #b8d4e8;
-            cursor: pointer;
-        }
-        .dialogcancel{
-            margin-left: 10px;
-        }
-        .dialogconform:hover,.dialogcancel:hover{
-            background: #0000ff;
-        }
+.dialogtxt{
+    color: #fff;
+    font-weight: 700;
+    margin-right: 20px;
+}
+.dialogmain{
+    padding: 10px 20px 10px 20px;
+}
+.dialogBtns{
+    text-align: center;
+    padding-top: 5px;
+}
+.dialogconform,.dialogcancel{
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+    padding: 0px 10px;
+    height: 24px;
+    line-height: 24px;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+    background: #005eac;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #b8d4e8 #124680 #124680  #b8d4e8;
+    cursor: pointer;
+}
+.dialogcancel{
+    margin-left: 10px;
+}
+.dialogconform:hover,.dialogcancel:hover{
+    background: #0000ff;
+}
