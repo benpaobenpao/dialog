@@ -1,6 +1,7 @@
 基于jquery和dot.js弹出框插件，兼容IE6+等其他浏览器。
 
 参数使用说明： 
+<pre>
 width：定义弹出框的宽度，默认值是400。
 height：定义弹出框的高度，默认值是100.
 title：定义弹出框的标题，默认值是空。
@@ -10,30 +11,31 @@ closed: 标题栏中的关闭按钮，回调方法，默认为null。
 conform：包含name指按钮的名称，默认值为确定，callback回调方法，默认值为null。
 cancel：包含name指按钮的名称，默认值为取消，callback回调方法，默认值为null。
 备注：如果使用conform或alert时，不设置type类型是不起作用。
+<pre>
 
 放在公用页面底部 
 <pre>
-<script id="dialogtmpl" type="text/x-dot-template">
+&lt;script id="dialogtmpl" type="text/x-dot-template"&gt;
     {{? it.isIE6===false }} 
-    <div id="dialogbg" class="dialogbg"></div>
+    &lt;div id="dialogbg" class="dialogbg"&gt;&lt;/div&gt;
     {{??  }}
-    <iframe id="dialogbg" class="dialogbg"></iframe>
+    <iframe id="dialogbg" class="dialogbg"&gt;&lt;/iframe&gt;
     {{?}}
-    <div id="dialogbox" class="dialogbox">
-        <div class="dialogcont">
-            <div class="dialogtit clearfix">
-                <a class="dialogclosed" title="关闭">&otimes;</a>
-                <div class="dialogtxt">{{=it.title}}</div>
-            </div>
-            <div class="dialogmain">{{=it.html}}</div>
+    &lt;div id="dialogbox" class="dialogbox"&gt;
+        &lt;div class="dialogcont"&gt;
+            &lt;div class="dialogtit clearfix"&gt;
+                &lt;a class="dialogclosed" title="关闭"&gt;&otimes;&lt;/a&gt;
+                &lt;div class="dialogtxt"&gt;{{=it.title}}&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="dialogmain"&gt;{{=it.html}}&lt;/div&gt;
             {{? it.type === "conform"}}
-            <div class="dialogBtns"><a class="dialogconform">{{=it.conform.name||"确定"}}</a></div>
+            &lt;div class="dialogBtns"&gt;&lt;a class="dialogconform"&gt;{{=it.conform.name||"确定"}}&lt;/a&gt;&lt;/div&gt;
             {{?? it.type === "alert"}}
-            <div class="dialogBtns"><a class="dialogconform">{{=it.conform.name||"确定"}}</a><a class="dialogcancel">{{=it.cancel.name||"取消"}}</a></div>
+            &lt;div class="dialogBtns"&gt;&lt;a class="dialogconform"&gt;{{=it.conform.name||"确定"}}&lt;/a&gt;&lt;a class="dialogcancel"&gt;{{=it.cancel.name||"取消"}}&lt;/a&gt;&lt;/div&gt;
             {{?}} 
-        </div>
-    </div>
-</script>
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/script&gt;
 </pre>
 
 例如：
