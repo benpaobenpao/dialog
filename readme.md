@@ -11,7 +11,8 @@ conform：包含name指按钮的名称，默认值为确定，callback回调方�
 cancel：包含name指按钮的名称，默认值为取消，callback回调方法，默认值为null。
 备注：如果使用conform或alert时，不设置type类型是不起作用。
 
-放在公用页面底部
+放在公用页面底部 
+<pre>
 <script id="dialogtmpl" type="text/x-dot-template">
     {{? it.isIE6===false }} 
     <div id="dialogbg" class="dialogbg"></div>
@@ -33,8 +34,10 @@ cancel：包含name指按钮的名称，默认值为取消，callback回调方�
         </div>
     </div>
 </script>
+</pre>
 
 例如：
+<pre>
 $.Dialog.init({
     height: 180,
     title: "弹出框",
@@ -43,3 +46,4 @@ $.Dialog.init({
         alert("关闭");
     }
 });
+</pre>
