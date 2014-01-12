@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>dialog弹出框benpaobenpao</title>
+    <script src="./js/jquery-1.10.2.min.js"></script>
+    <script src="./js/dot.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="dialog.css">
+    <script src="dialog.min.js"></script>
+    <style>
+        body{height: 1500px;}
+        .main{width: 960px; margin: 60px auto 0px; }
+        .main .btn{width: 100px; height: 30px; line-height: 30px; text-align: center; cursor: pointer;}
+        .mtable{ height: 100px; overflow-y: auto;}
+        .mtable table{width: 100%; text-align: center;}
+        .mtable table th, .mtable table td{padding:10px 0px;}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div>
+            <img src="http://images.cnblogs.com/cnblogs_com/kuikui/354173/r_test1.jpg" />
+            <select><option>one</option><option>two</option></select>
+            弹出框插件测试。。。
+        </div>
+        <div>
+            点击测试：
+            <input class="btn" id="btndef" type="button" value="default" />
+            <input class="btn" id="btnconf" type="button" value="confirm" />
+            <input class="btn" id="btnal" type="button" value="alert" />
+            <p>使用conform、alert必须制定其type类型，type默认值是default。</p>
+        </div>
+    </div>
+    
+    <script id="arrtmpl" type="text/x-dot-template">
+        <div class="mtable">
+            <table >
+                <thead>
+                    <tr>
+                        <th>第一项</th>
+                        <th>第二项</th>
+                        <th>第三项</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{~it.array:value:index }}
+                    <tr>
+                        <td>{{= value.one }}</td><td>{{= value.two }}</td><td>{{= value.three }}</td>
+                    </tr>
+                    {{~}}
+                </tbody>
+            </table>
+        </div>
+    </script>
+
+    <script id="dialogtmpl" type="text/x-dot-template">
+        {{? it.isIE6===false }} 
+        <div id="dialogbg" class="dialogbg"></div>
+        {{??  }}
+        <iframe id="dialogbg" class="dialogbg"></iframe>
+        {{?}}
+        <div id="dialogbox" class="dialogbox">
+            <div class="dialogcont">
+                <div class="dialogtit clearfix">
+                    <a class="dialogclosed" title="关闭">&otimes;</a>
+                    <div class="dialogtxt">{{=it.title}}</div>
+                </div>
+                <div class="dialogmain">{{=it.html}}</div>
+                {{? it.type === "conform"}}
+                <div class="dialogBtns"><a class="dialogconform">{{=it.conform.name||"确定"}}</a></div>
+                {{?? it.type === "alert"}}
+                <div class="dialogBtns"><a class="dialogconform">{{=it.conform.name||"确定"}}</a><a class="dialogcancel">{{=it.cancel.name||"取消"}}</a></div>
+                {{?}} 
+            </div>
+        </div>
+    </script>
+
+
+    <script>
+        (function($) {
+            $("#btndef").click(function() {
+                $.Dialog.init({
+                    height: 180,
+                    title: "弹出框",
+                    html: "亲，默认弹出框哦",
+                    closed: function() {
+                        alert("关闭");
+                    }
+                });
+            });
+
+
+            $("#btnconf").click(function() {
+                $.Dialog.init({
+                    height: 100,
+                    html: "",
+                    type: "conform",
+                    conform: {
+                        name: "确认按钮哦哦哦哦"
+                    }
+                });
+            });
+
+            $("#btnal").click(function() {
+                var arr = {
+                    "array": [{
+                        "one": "1",
+                        "two": "2",
+                        "three": "3"
+                    }, {
+                        "one": "11",
+                        "two": "22",
+                        "three": "33"
+                    }, {
+                        "one": "111",
+                        "two": "222",
+                        "three": "333"
+                    }, {
+                        "one": "1111",
+                        "two": "2222",
+                        "three": "3333"
+                    }, {
+                        "one": "11111",
+                        "two": "22222",
+                        "three": "33333"
+                    }, {
+                        "one": "111111",
+                        "two": "222222",
+                        "three": "333333"
+                    }]
+                };
+                var interText = doT.template($("#arrtmpl")[0].text);
+                var html = interText(arr);
+                $.Dialog.init({
+                    height: 190,
+                    html: html,
+                    type: "alert",
+                    conform: {
+                        callback: function() {
+                            alert("确定");
+                        }
+                    },
+                    cancel: {
+                        callback: function() {
+                            alert("取消");
+                        }
+                    }
+                });
+            });
+
+        })(jQuery);
+    </script>
+</body>
+</html>
